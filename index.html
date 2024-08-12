@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="website icon" type="image/x-icon" href="./imgs/web-icon.png">
+  <link rel="stylesheet" href="./cdn_modules/font-awesome@6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="addons/bootstraps/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  <link rel="stylesheet" href="./fontawesome/css/all.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Icons -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="github" viewBox="0 0 16 16">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+    </symbol>
+
+    <symbol id="twitter" viewBox="0 0 16 16">
+      <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+    </symbol>
+
+    <symbol id="facebook" viewBox="0 0 16 16">
+      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+    </symbol>
+  </svg>
+
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3 fixed-top">
+    <div class="container">
+      <a href="./index.html" class="navbar-brand fw-bolder f-lg">HOS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto text-center my-3 mb-3 text-bold">
+          <li class="nav-item my-2">
+            <a href="#learn" class="nav-link hover-bg text-bold">Learn</a>
+          </li>
+          <li class="nav-item my-2">
+            <a href="#questions" class="nav-link hover-bg hover">Earn</a>
+          </li>
+          <li class="nav-item my-2">
+            <a href="#instructors" class="nav-link hover-bg hover">Create</a>
+          </li>
+          <li class="nav-item my-2">
+            <a href="../Details/login.html" class="nav-link hover-bg hover">
+              Login
+            </a>
+          </li>
+          <li class="nav-items d-flex input-group news-input bg-body-tertiary-dark">
+            <input class="form-control d-md-none" type="search" placeholder="Search">
+            <button class="btn btn-primary type-button btn-lg d-md-none" id="button-addon2">Search</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ShowCase -->
+  <section id="hero" class="bg-dark text-light pt-lg-3 p-lg-0 p-3 text-center text-sm-start pt-5">
+    <div class="container">
+      <div class="d-sm-flex align-items-center justify-content-between pt-5">
+        <div>
+          <h1>Become A <span class="text-warning">Web Developer</h1>
+          <p class="lead my-4">
+            We focus our students on the fundamental of the latest and greatest technologies to prepare them for their first dev role.
+          </p>
+          <i class="fas fa-plane plane"></i>
+          <img class="img-fluid w-50  d-sm-block my-3 top" src="imgs/ninja.png">
+          <p class="lead">$100 for 3 months - include everything in the pro plan</p>
+          <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#enrol">Start The Enrollment
+          <i class="fas fa-lock lock"></i></button>
+          <div id="enrol" class="modal modal fade" tabindex="-1" role="dialog" aria-hidden="true" aria-labelledby="enrol">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content rounded-4 shadow">
+                <div class="modal-header p-5 pb-4 border-bottom-0">
+                  <h1 class="fw-bold mb-0 fs-2 text-dark">Sign up for free</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body p-5 pt-0">
+                  <form class="text-dark">                    <div class="form-floating mb-3">
+                                        <input type="name" class="form-control rounded-3" id="floatingPassword" placeholder="name">
+                                        <label for="floatingPassword">Name</label>
+                                      </div>
+                    <div class="form-floating mb-3">
+                      <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="name@example.com">
+                      <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control rounded-3" id="floatingPassword" placeholder="Password">
+                      <label for="floatingPassword">Password</label>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Sign up</button>
+                    <small class="text-body-secondary">By clicking Sign up, you agree to the terms of use.</small>
+                    <hr class="my-4">
+                    <h2 class="fs-5 fw-bold mb-3">Or use a third-party</h2>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                      <svg class="bi me-1=" width="16" height="16">
+                        <use xlink:href="#twitter" />
+                      </svg>
+                      Sign up with Twitter
+                    </button>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-primary rounded-3" type="submit">
+                      <svg class="bi me-1" width="16" height="16">
+                        <use xlink:href="#facebook" />
+                      </svg>
+                      Sign up with Facebook
+                    </button>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-secondary rounded-3" type="submit">
+                      <svg class="bi me-1" width="16" height="16">
+                        <use xlink:href="#github" />
+                      </svg>
+                      Sign up with GitHub
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-primary text-light py-3">
+    <div class="container">
+      <div class="d-md-flex justify-content-between align-items-center">
+        <h3 class="md-3 md-mb-0 text-center fw-bold">Signup For Our Newsletter <i class="fas fa-newspaper big"></i></h3>
+        <div class="input-group news-input">
+          <input type="text" class="form-control" placeholder="Enter Email">
+          <button class="btn btn-dark type-button btn-lg" id="button-addon2"><i class="fas fa-bell fa-shake big "></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-3">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-md">
+          <div class="card bg-dark text-light">
+            <div class="card-body text-center">
+              <h3 class="card-title mb-3">
+                Your Ultimate Tech Learning Destination
+              </h3>
+              <div class="community-support">
+                <i class="fas fa-car"></i>
+              </div>
+              <p class="card-text">
+                Are you ready to embark on a journey of discovery and innovation in the world of technology? Look no further than Home of Science - your one-stop destination for all things web development and design
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card bg-secondary text-light">
+            <div class="card-body text-center">
+              <h3 class="card-title mb-3">
+                Unveiling the Home of Science Experience
+              </h3>
+              <p class="card-text">
+                Home of Science is not just another tech website; it is a virtual haven for tech enthusiasts, beginners, and professionals alike. Whether you are looking to enhance your skills in web development, graphic design, or other related courses, Home of Science has got you covered
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="card bg-dark text-light">
+            <div class="card-body text-center">
+              <h3 class="card-title mb-3">
+                Community Support
+              </h3>
+              <div class="community-support">
+                <i class="fas fa-person"></i>
+                <i class="fas fa-person"></i>
+                <i class="fas fa-person"></i>
+              </div>
+              <p class="card-text">
+                Connect with like-minded individuals, collaborate on projects, and seek guidance from fellow learners in the Home of Science community
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-dark text-light box p-3">
+    <div class="inner-box fw-bold text-center">
+      <h1>Unleash Your Creativity with Home of Science</h1>
+    </div>
+  </section>
+
+  <section class="bg-primary mt-3 p-3">
+    <div class="container">
+      <h1 class="lead text-center text-light fw-bold top">Popular Courses</h1>
+      <div class="part-shadow card bg-light p-2">
+        <img class="center" src="imgs/ninja.png" width="50px" height="50px">
+        <h1 class="fw-bold card-title text-center">HTML</h1>
+        <ul>
+          <li>Fundamentals of html </li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Website Layout</li>
+        </ul>
+      </div>
+      <div class="part-shadow card bg-dark mt-3 p-2">
+        <img src="imgs/ninja.png" width="50px" class="center">
+        <h1 class="text-light text-center">CSS</h1>
+        <ul class="text-light">
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+      </div>
+      <div class="part-shadow card mt-3 bg-light p-3">
+        <img src="imgs/ninja.png" class="center" width="50px" height="70px">
+        <h1 class="fw-bold card-title text-center">JavaScript</h1>
+        <ul>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Lorem ipsum dolor sit amet.</li>
+        </ul>
+      </div>
+      <button class="btn btn-light part-shadow mt-3">
+        <a href="#" class="text-decoration-none text-center">See All Courses <i class="fas fa-solid fa-arrow-right"></i></a>
+      </button>
+    </div>
+  </section>
+
+  <section class="bg-light text-dark pt-3">
+    <div class="container">
+      <h1 class="text-center fw-bolder">Join Our Premium Courses</h1>
+      <p class="text-center">Buy StandAlone Courses or Get Access To All Courses As Long As You have An Active Membership</p>
+      <div class="part-shadow card bg-dark text-light p-3 my-3">
+        <h3 class="text-center">Single Courses</h3>
+        <h1 class="fw-bold text-center">
+          $20/Course
+        </h1>
+        <p class="lead text-center">Buy Once, Own It Forever</p>
+        <ul>
+          <li class="pb-1">Purchase a Specific Course</li>
+          <li class="pb-1">Lifetime Course Access</li>
+          <li class="pb-1">Full HD Video & HQ Audio</li>
+          <li class="pb-1">Extra course attachments & exercises</li>
+          <li class="pb-1">Certificate of Completion</li>
+          <li class="pb-1">Access To Discord Community</li>
+        </ul>
+        <button class="btn btn-light text-dark">
+          <a href="#" class="text-decoration-none text-dark fw-bold">Buy Now</a>
+        </button>
+      </div>
+
+      <div class="part-shadow card bg-warning text-light p-3 my-3">
+        <h3 class="text-center">Monthly Membership</h3>
+        <h1 class="fw-bold text-center">
+          $30/Course
+        </h1>
+        <p class="lead text-center">Become A Pro Member</p>
+        <ul>
+          <li class="pb-1">Access To All Courses</li>
+          <li class="pb-1">Lifetime Course Access</li>
+          <li class="pb-1">Full HD Video & HQ Audio</li>
+          <li class="pb-1">Extra course attachments & exercises</li>
+          <li class="pb-1">Certificate of Completion</li>
+          <li class="pb-1">Access To Discord Community</li>
+        </ul>
+        <button class="btn btn-light">
+          <a href="#" class="text-decoration-none text-warning fw-bold">Buy Now</a>
+        </button>
+      </div>
+
+      <div class="part-shadow card bg-primary text-light p-3 mt-3 mb-3">
+        <i class="fas fa-crown large"></i>
+        <h3 class="text-center">Yearly Membership</h3>
+        <h1 class="fw-bold text-center">
+          $200/Course
+        </h1>
+        <p class="lead text-center">Become A VIP Member</p>
+        <ul>
+          <li class="pb-1">Save 40% Compared To Monthly</li>
+          <li class="pb-1">Purchase a Specific Course</li>
+          <li class="pb-1">Lifetime Course Access</li>
+          <li class="pb-1">Full HD Video & HQ Audio</li>
+          <li class="pb-1">Extra course attachments & exercises</li>
+          <li class="pb-1">Certificate of Completion</li>
+          <li class="pb-1">Access To Discord Community</li>
+        </ul>
+        <button class="btn btn-light">
+          <a href="#" class="text-decoration-none text-primary fw-bold">Buy Now</a>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-light p-3">
+    <div class="container">
+      <h3 class="text-dark text-center fw-bold">Home Of Science</h3>
+      <h1 class="text-center text-dark">Web Dev Guide</h1>
+      <p class="text-center text-dark">The Most Complete Guide to web development technologies on the planet.</p>
+      <p class="text-center text-dark">The guide also goes into different programming concepts, career and even mental health.</p>
+      <button class="btnn"><a href="#">Get It For $9.99</a></button>
+    </div>
+  </section>
+
+  <!-- Contact & Map-->
+  <section class="p-3">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md">
+          <h2 class="text-center mb-3">
+            Contact Info
+          </h2>
+          <ul class="list-group list-group-flush lead">
+            <li class="list-group-items">
+              <span class="fw-bold">Main Location:</span> Unknown Yet
+            </li>
+            <hr>
+            <li class="list-group-items">
+              <span class="fw-bold">Enrollment Email:</span> Unknown Yet
+            </li>
+            <hr>
+            <li class="list-group-items">
+              <span class="fw-bold"> Enrollment Phone:</span> Unknown Yet
+            </li>
+          </ul>
+        </div>
+        <div id='map' class="part-shadow"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer bg-dark text-light">
+    <div class="container">
+      <h1 class="a fw-bold text-light move">
+        HOS
+      </h1>
+      <div class="home d-grid">
+        <h1 class="mt-3">Home</h1>
+        <a href="#" class="text-light text-decoration-none">
+          Plans & Pricing
+        </a>
+        <a href="#" class="text-light text-decoration-none">
+          Gift Membership
+        </a>
+        <a href="#" class="text-light text-decoration-none">
+          Talent Hunt Program
+        </a>
+      </div>
+      <div class="community d-grid">
+        <h1 class="mt-3">Community</h1>
+        <a href="Community/community.html" class="text-light text-decoration-none">Explore The Community</a>
+        <a href="Community/YouTube.html" class="text-light text-decoration-none">YouTube</a>
+        <a href="Community/contact.html" class="text-light text-decoration-none">Contact Us</a>
+      </div>
+      <div class="courses d-grid">
+        <h1 class="mt-3">Courses</h1>
+        <a href="Courses/All-Courses.html" class="text-light text-decoration-none">All Courses</a>
+        <a href="Courses/BootCamp-Courses.html" class="text-light text-decoration-none">Self-Paced BootCamp</a>
+        <a href="Courses/Free-Courses.html" class="text-light text-decoration-none">Free Courses</a>
+        <a href="Courses/Pro-Courses.html" class="text-light text-decoration-none">Pro Courses</a>
+      </div>
+      <div class="company d-grid">
+        <h1 class="mt-3">Company</h1>
+        <a href="Company/about.html" class="text-light text-decoration-none">About Us</a>
+        <a href="Company/Support.html" class="text-light text-decoration-none">Support Center</a>
+        <a href="Company/terms.html" class="text-light text-decoration-none">Terms Of Service</a>
+        <a href="Company/privacy.html" class="text-light text-decoration-none">Privacy Policy</a>
+        <p class="pt-5">&copy; 2024 Home Of Science. All rights reserved</p>
+      </div>
+  </footer>
+
+  <!-- Cookie -->
+  <div class="wrapper">
+    <header class="text-center">
+      <i class="bx bx-cookie"></i>
+      <h2 class="text-center">Cookies Consent</h2>
+    </header>
+    <div class="data">
+      <p>This website use cookies to help you have a superior and more relevant browsing experience on the website. <a href="#"> Read more...</a></p>
+    </div>
+    <div class="buttons">
+      <button class="button" id="acceptBtn">Accept</button>
+      <button class="button" id="declineBtn">Decline</button>
+    </div>
+  </div>
+  
+  <div id="internet-request">
+    <div class="heading"></div>
+    <div class="text"></div>
+  </div>
+  
+  <script src="addons/bootstraps/bootstrap.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>
